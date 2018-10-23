@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.List;
 
 /**
- * Created by lventura on 25/09/17.
+ * Created by lchang on 25/09/17.
  */
 
 public class DatosAdapter extends ArrayAdapter<Datos> {

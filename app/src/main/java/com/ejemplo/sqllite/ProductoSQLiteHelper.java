@@ -9,12 +9,12 @@ import android.util.Log;
  * Created by lchang on 25/09/17.
  */
 
-public class DatosSQLiteHelper extends SQLiteOpenHelper {
+public class ProductoSQLiteHelper extends SQLiteOpenHelper {
 
     //Sentencia SQL para crear la tabla de Usuarios
     private String sqlCreate = "CREATE TABLE Producto (codigo INTEGER, nombre TEXT, stock INTEGER)";
 
-    public DatosSQLiteHelper(Context context, String nombre, SQLiteDatabase.CursorFactory factory, int version){
+    public ProductoSQLiteHelper(Context context, String nombre, SQLiteDatabase.CursorFactory factory, int version){
         super(context, nombre, factory, version);
     }
 

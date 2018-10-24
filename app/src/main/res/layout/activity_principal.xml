@@ -22,7 +22,7 @@
             android:text="@string/nreg" />
 
         <EditText
-            android:id="@+id/txtReg"
+            android:id="@+id/txtCodigo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -38,7 +38,7 @@
             android:text="@string/val" />
 
         <EditText
-            android:id="@+id/txtVal"
+            android:id="@+id/txtNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"

@@ -10,26 +10,28 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical">
+
         <TextView
-            android:id="@+id/lblid"
+            android:id="@+id/tvCodigo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=""/>
+            android:text="" />
+
         <TextView
-            android:id="@+id/lblValor"
+            android:id="@+id/tvNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
+            android:text=""
             android:textColor="#000"
-            android:text=""/>
+            android:textSize="18sp" />
     </LinearLayout>
 
     <TextView
-        android:id="@+id/lblStock"
+        android:id="@+id/tvStock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#0b6e00"
         android:layout_gravity="center"
-        android:text=""/>
+        android:text=""
+        android:textColor="#0b6e00" />
 
 </LinearLayout>

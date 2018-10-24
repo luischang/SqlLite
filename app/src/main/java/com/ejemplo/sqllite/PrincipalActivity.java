@@ -36,8 +36,8 @@ public class PrincipalActivity extends AppCompatActivity {
         setContentView(R.layout.activity_principal);
 
         //Obtenemos las referencias a los controles
-        txtCodigo = (EditText)findViewById(R.id.txtReg);
-        txtNombre = (EditText)findViewById(R.id.txtVal);
+        txtCodigo = (EditText)findViewById(R.id.txtCodigo);
+        txtNombre = (EditText)findViewById(R.id.txtNombre);
         txtStock = (EditText)findViewById(R.id.txtStock);
         //txtResultado = (TextView)findViewById(R.id.txtResultado);
 
@@ -49,8 +49,8 @@ public class PrincipalActivity extends AppCompatActivity {
         ltvValores = (ListView) findViewById(R.id.listValores);
 
         //Abrimos la base de datos 'DBUsuarios' en modo escritura
-        final DatosSQLiteHelper dsdbh =
-                new DatosSQLiteHelper(this, "DBUsuarios", null, 1);
+        final ProductoSQLiteHelper dsdbh =
+                new ProductoSQLiteHelper(this, "DBUsuarios", null, 1);
 
         db = dsdbh.getWritableDatabase();
 
@@ -132,14 +132,14 @@ public class PrincipalActivity extends AppCompatActivity {
 
                 //Recorremos los resultados para mostrarlos en pantalla
 
-                List<Datos> datos = new ArrayList<>();
+                List<Producto> productos = new ArrayList<>();
 
                 //txtResultado.setText("");
                 if (c.moveToFirst()) {
                     //Recorremos el cursor hasta que no haya más registros
                     do {
 
-                        datos.add(new Datos(c.getString(0), c.getString(1), c.getString(2)));
+                        productos.add(new Producto(c.getInt(0), c.getString(1), c.getInt(2)));
 
                         /*String cod = c.getString(0);
                         String nom = c.getString(1);
@@ -148,7 +148,7 @@ public class PrincipalActivity extends AppCompatActivity {
                     } while(c.moveToNext());
                 }
 
-                DatosAdapter adapter = new DatosAdapter(PrincipalActivity.this, datos);
+                ProductoAdapter adapter = new ProductoAdapter(PrincipalActivity.this, productos);
                 ltvValores.setAdapter(adapter);
             }
         });

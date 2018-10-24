@@ -15,13 +15,13 @@ import java.util.List;
  * Created by lchang on 25/09/17.
  */
 
-public class DatosAdapter extends ArrayAdapter<Datos> {
+public class ProductoAdapter extends ArrayAdapter<Producto> {
 
-    private List<Datos> datos;
+    private List<Producto> productos;
 
-    public DatosAdapter(Context context, List<Datos> datos){
-        super(context, R.layout.item, datos);
-        this.datos = datos;
+    public ProductoAdapter(Context context, List<Producto> productos){
+        super(context, R.layout.item, productos);
+        this.productos = productos;
     }
 
     @NonNull
@@ -35,13 +35,13 @@ public class DatosAdapter extends ArrayAdapter<Datos> {
             view = inflater.inflate(R.layout.item, null);
         }
 
-        TextView lblId = (TextView) view.findViewById(R.id.lblid);
-        TextView lblValor = (TextView) view.findViewById(R.id.lblValor);
-        TextView lblStock = (TextView) view.findViewById(R.id.lblStock);
+        TextView tvCodigo = (TextView) view.findViewById(R.id.tvCodigo);
+        TextView tvNombre = (TextView) view.findViewById(R.id.tvNombre);
+        TextView tvStock = (TextView) view.findViewById(R.id.tvStock);
 
-        lblId.setText(datos.get(position).getId());
-        lblValor.setText(datos.get(position).getNombre());
-        lblStock.setText(datos.get(position).getStock());
+        tvCodigo.setText(String.valueOf(productos.get(position).getCodigo()));
+        tvNombre.setText(productos.get(position).getNombre());
+        tvStock.setText(String.valueOf(productos.get(position).getStock()));
 
         return view;
     }
